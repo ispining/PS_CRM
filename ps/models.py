@@ -11,6 +11,7 @@ class Worker(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     teudat_zeut = models.CharField(max_length=10)
+    profile_picture = models.ImageField(blank=True, null=True)
     status = models.CharField(max_length=10)
     vip = models.CharField(max_length=10)
     country = models.CharField(max_length=10)
@@ -22,7 +23,7 @@ class Worker(models.Model):
     birth_date = models.CharField(max_length=10)
     reg_date = models.CharField(max_length=10)
     age = models.IntegerField(default=0)
-
+    special_files = models.FileField(blank=True, null=True)
 
 class Agent(models.Model):
     affiliate_id = models.CharField(max_length=10)
@@ -37,9 +38,11 @@ class Agent(models.Model):
     phone2 = models.CharField(max_length=13)
     email = models.CharField(max_length=30)
     site = models.CharField(max_length=30)
+    profile_picture = models.ImageField(blank=True, null=True)
     status = models.CharField(max_length=15)
     contact_id = models.CharField(max_length=10)
     reg_date = models.CharField(max_length=20)
+    special_files = models.FileField(blank=True, null=True)
 
 
 class Lead(models.Model):
@@ -48,6 +51,7 @@ class Lead(models.Model):
     first_name = models.CharField(max_length=10)
     last_name = models.CharField(max_length=10)
     teudat_zeut = models.CharField(max_length=13)
+    profile_picture = models.ImageField(blank=True, null=True)
     status = models.CharField(max_length=10)
     vip = models.CharField(max_length=10)
     country = models.CharField(max_length=120)
@@ -59,12 +63,14 @@ class Lead(models.Model):
     birth_date = models.CharField(max_length=20)
     reg_date = models.CharField(max_length=20)
     family_ids = models.CharField(max_length=150)
+    special_files = models.FileField(blank=True, null=True)
 
 
 class Stock(models.Model):
     row_id = models.CharField(max_length=10)
     item_id = models.CharField(max_length=15)
     name = models.CharField(max_length=30)
+    item_picture = models.ImageField(blank=True, null=True)
     item_firm = models.CharField(max_length=20)
     item_barcode = models.CharField(max_length=60)
     input_cost = models.CharField(max_length=4)
@@ -74,6 +80,7 @@ class Stock(models.Model):
     package_num = models.CharField(max_length=20)
     item_count = models.CharField(max_length=6)
     in_stock = models.BooleanField(default=False)
+    special_files = models.FileField(blank=True, null=True)
 
 
 class Texts(models.Model):
